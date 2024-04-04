@@ -15,5 +15,5 @@ export default defineConfig({
       input: "/src/main.tsx",
     },
   },
-  base: "/vite-deploy-demo/",
+  base: "/Cheat_sheet_interview/",
 });
