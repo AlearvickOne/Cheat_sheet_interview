@@ -1,14 +1,17 @@
 import TaskElement from "./components/TaskElement";
-import { questions } from "./_apiLocal/questions";
 import React, { useMemo, useState } from "react";
 import { IQuestions } from "./interfaces/IQuestions";
+import getElementsInJson from "./_apiLocal/serverComands";
 
 type setQuestion = React.Dispatch<React.SetStateAction<IQuestions>>;
 type setIndex = React.Dispatch<React.SetStateAction<number>>;
 
-const getQuestion = (indexQuestion: number, setQuestion: setQuestion, setIndex: setIndex) => {
-  return questions.map(({ title, text }, index) => {
-    const length = questions.length;
+const getQuestion = async (indexQuestion: number, setQuestion: setQuestion, setIndex: setIndex) => {
+  const questions = await getElementsInJson();
+  const questionsHtml = questions.html!;
+
+  return questionsHtml!.map(({ title, text }, index) => {
+    const length = questionsHtml.length;
 
     if (indexQuestion === length) setIndex(0);
     else if (indexQuestion === -1) setIndex(length - 1);
