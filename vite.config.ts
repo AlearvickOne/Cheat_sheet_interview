@@ -15,5 +15,4 @@ export default defineConfig({
       input: "/src/main.tsx",
     },
   },
-  base: "./Cheat_sheet_interview/",
 });

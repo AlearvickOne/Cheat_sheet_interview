@@ -3,10 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://gitname.github.io/react-gh-pages",
+  "homepage": "https://AlearvickOne.github.io/Cheat_sheet_interview",
   "scripts": {
+    "start": "vite",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
-    "build": "tsc && vite build",
+    "buildvite": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
