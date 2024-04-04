@@ -1,0 +1,19 @@
+.--anim-border {
+  &::after {
+    animation: gradientBorder 2s linear infinite;
+  }
+}
+
+@keyframes gradientBorder {
+  0% {
+    // transform: rotate(0deg);
+    border-color: #020202;
+  }
+  50% {
+    // transform: rotate(360deg);
+    border-color: #fdee99;
+  }
+  100% {
+    border-color: #ff0000;
+  }
+}
