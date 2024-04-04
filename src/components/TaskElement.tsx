@@ -11,11 +11,13 @@ const TaskElement = (props: IQuestions): JSX.Element => {
 
   return (
     <div className="task_element --anim-border">
-      <div className="task_element-title">
-        <h3>{title}</h3>
-      </div>
-      <div className="task_element-text">
-        <p>{text}</p>
+      <div className="task_element-question">
+        <div className="task_element-title">
+          <h3>{title}</h3>
+        </div>
+        <div className="task_element-text">
+          <p>{text}</p>
+        </div>
       </div>
       <form className="task_buttons">
         <Button onClick={minusIndex}>Назад</Button>

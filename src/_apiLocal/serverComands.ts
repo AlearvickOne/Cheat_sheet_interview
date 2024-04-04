@@ -14,7 +14,7 @@ type arrayJson = [
 const getElementsInJson = async () => {
   let a: IQ = {};
   await axios
-    .get("https://mocki.io/v1/04bcc6ad-4563-4549-a4eb-c738f7e1f3ed")
+    .get("https://mocki.io/v1/f8d0169d-8f1e-4a6b-887e-80802458a218")
     .then((res) => {
       a = res.data;
     })

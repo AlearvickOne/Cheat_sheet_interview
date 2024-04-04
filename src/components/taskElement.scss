@@ -21,19 +21,22 @@
     box-shadow: 0rem 1rem 5rem rgb(146, 142, 142);
   }
 
-  .task_element-title {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
+  .task_element-question {
+    height: 30rem;
 
-  .task_element-text {
-    text-align: center;
-    font-size: 18px;
+    .task_element-title {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .task_element-text {
+      text-align: center;
+      font-size: 18px;
+    }
   }
 
   .task_buttons {
     display: flex;
     justify-content: space-between;
-    margin-top: 20rem;
   }
 }
