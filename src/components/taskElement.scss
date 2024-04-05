@@ -22,7 +22,7 @@
   }
 
   .task_element-question {
-    height: 30rem;
+    min-height: 35rem;
 
     .task_element-title {
       text-align: center;
@@ -32,6 +32,7 @@
     .task_element-text {
       text-align: center;
       font-size: 18px;
+      margin-bottom: 1rem;
     }
   }
 
