@@ -1,15 +1,19 @@
-interface IQuestions {
-  title: nameQuestion;
-  text: textQuestion;
-  sortQuestion?: sortQuestion;
-  index?: index;
-  setIndex?: setIndex;
+import { typeIndexQuestion, typeNameQuestion, typeTextQuestion, typeSetIndexQuestion, typeArrayJson } from "@/types/types";
+
+interface IQuestionsUnpack {
+  title: typeNameQuestion;
+  text: typeTextQuestion;
+  index?: typeIndexQuestion;
+  setIndex?: typeSetIndexQuestion;
 }
 
-type nameQuestion = string;
-type textQuestion = string;
-type sortQuestion = string;
-type setIndex = React.Dispatch<React.SetStateAction<number>>;
-type index = number;
+// ----------------------------------------------------------------
 
-export type { IQuestions };
+interface IQuestionsJson {
+  html?: typeArrayJson;
+  css?: typeArrayJson;
+  js?: typeArrayJson;
+  react?: typeArrayJson;
+}
+
+export type { IQuestionsUnpack, IQuestionsJson };

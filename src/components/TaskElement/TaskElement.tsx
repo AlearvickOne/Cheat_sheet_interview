@@ -1,9 +1,9 @@
+import { IQuestionsUnpack } from "../../interfaces/IQuestions";
+import Button from "../../widgest/Button.tsx/Button";
 import "./taskElement.scss";
-import "../animations/animation.scss";
-import Button from "../widgest/Button.tsx/Button";
-import { IQuestions } from "../interfaces/IQuestions";
+import "../../animations/animation.scss";
 
-const TaskElement = (props: IQuestions): JSX.Element => {
+const TaskElement = (props: IQuestionsUnpack): JSX.Element => {
   const { title, text, index, setIndex } = props;
 
   const plusIndex = () => setIndex!(index! + 1);
