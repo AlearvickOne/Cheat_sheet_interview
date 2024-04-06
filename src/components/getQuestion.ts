@@ -7,6 +7,7 @@ const getQuestion = async (idQuestionSelector: string, indexQuestion: number, se
   const questionsCss = questions.css!;
   const questionsJS = questions.js!;
   const questionsReact = questions.react!;
+  const questionsRestHttpAPI = questions.restApiHttp!;
 
   let questionSelector = questionsHtml;
 
@@ -22,6 +23,9 @@ const getQuestion = async (idQuestionSelector: string, indexQuestion: number, se
       break;
     case "react":
       questionSelector = questionsReact;
+      break;
+    case "restApiHttp":
+      questionSelector = questionsRestHttpAPI;
       break;
   }
 

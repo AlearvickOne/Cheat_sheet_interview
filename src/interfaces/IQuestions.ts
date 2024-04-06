@@ -14,6 +14,7 @@ interface IQuestionsJson {
   css?: typeArrayJson;
   js?: typeArrayJson;
   react?: typeArrayJson;
+  restApiHttp?: typeArrayJson;
 }
 
 export type { IQuestionsUnpack, IQuestionsJson };

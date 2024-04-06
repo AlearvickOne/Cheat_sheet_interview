@@ -5,7 +5,7 @@ import { IQuestionsJson } from "@/interfaces/IQuestions";
 const getElementsInJson = async () => {
   let data: IQuestionsJson = {};
 
-  const link = "https://mocki.io/v1/c1dc1de6-ea3d-47bf-be7f-217293e2f3d9";
+  const link = "https://mocki.io/v1/c370832d-26a1-4181-8cdd-c61226bf1a80";
 
   await axios
     .get(link)

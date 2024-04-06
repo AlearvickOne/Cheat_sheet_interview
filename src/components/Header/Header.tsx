@@ -13,6 +13,7 @@ const Header = ({ selectName, setSelectName }: ISelected): JSX.Element => {
         <option value="css">css</option>
         <option value="js">js</option>
         <option value="react">react</option>
+        <option value="restApiHttp">REST - API - HTTP</option>
       </select>
     </header>
   );
