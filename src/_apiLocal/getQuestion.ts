@@ -1,36 +1,34 @@
 import { typeSetIndexQuestion, typeSetQuestion } from "@/types/types";
-import getElementsInJson from "../_apiLocal/serverComands";
+import ServerCommands from "./serverComands.class";
 
 const getQuestion = async (idQuestionSelector: string, indexQuestion: number, setQuestion: typeSetQuestion, setIndex: typeSetIndexQuestion) => {
-  const questions = await getElementsInJson();
-  const questionsHtml = questions.html!;
-  const questionsCss = questions.css!;
-  const questionsJS = questions.js!;
-  const questionsReact = questions.react!;
-  const questionsRestHttpAPI = questions.restApiHttp!;
+  const questions = await ServerCommands.getQuestionsServer();
 
-  let questionSelector = questionsHtml;
+  let questionSelector = questions.html!;
 
   switch (idQuestionSelector) {
     case "html":
-      questionSelector = questionsHtml;
+      questionSelector = questions.html!;
       break;
     case "css":
-      questionSelector = questionsCss;
+      questionSelector = questions.css!;
       break;
     case "js":
-      questionSelector = questionsJS;
+      questionSelector = questions.js!;
       break;
     case "react":
-      questionSelector = questionsReact;
+      questionSelector = questions.react!;
       break;
     case "restApiHttp":
-      questionSelector = questionsRestHttpAPI;
+      questionSelector = questions.restApiHttp!;
+      break;
+    case "cors":
+      questionSelector = questions.cors!;
       break;
   }
 
   return questionSelector!.map(({ title, text }, index) => {
-    const length = questionSelector.length;
+    const length = questionSelector!.length;
 
     if (indexQuestion === length) setIndex(0);
     else if (indexQuestion === -1) setIndex(length - 1);

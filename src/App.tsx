@@ -1,8 +1,8 @@
 import { useMemo, useState } from "react";
-import { IQuestionsUnpack } from "./interfaces/IQuestions";
+import { IQuestionsUnpack } from "./interfaces/IQuestions.interface";
 import TaskElement from "./components/TaskElement/TaskElement";
-import Header from "./components/Header/Header";
-import getQuestion from "./components/getQuestion";
+import OptionsSelect from "./components/Header/OptionsSelect";
+import getQuestion from "./_apiLocal/getQuestion";
 
 function App() {
   const [questionObject, setQuestionObject] = useState<IQuestionsUnpack>({ title: "", text: "" });
@@ -15,7 +15,7 @@ function App() {
 
   return (
     <>
-      <Header selectName={selectName} setSelectName={setSelectName} />
+      <OptionsSelect selectName={selectName} setSelectName={setSelectName} />
       <TaskElement title={title} text={text} index={indexQuestion!} setIndex={setIndexQuestion} />
     </>
   );

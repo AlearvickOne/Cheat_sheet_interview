@@ -1,4 +1,4 @@
-import { IQuestionsUnpack } from "../../interfaces/IQuestions";
+import { IQuestionsUnpack } from "../../interfaces/IQuestions.interface";
 import Button from "../../widgest/Button.tsx/Button";
 import "./taskElement.scss";
 import "../../animations/animation.scss";

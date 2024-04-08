@@ -1,4 +1,4 @@
-import { IButton } from "../../interfaces/IText";
+import { IButton } from "../../interfaces/IText.interface";
 import "./button.scss";
 import "../../animations/animation.scss";
 

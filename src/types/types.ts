@@ -1,4 +1,4 @@
-import { IQuestionsUnpack } from "@/interfaces/IQuestions";
+import { IQuestionsUnpack } from "@/interfaces/IQuestions.interface";
 import { SetStateAction } from "react";
 
 /* React.Dispatch */
