@@ -1,4 +1,10 @@
-import { typeIndexQuestion, typeNameQuestion, typeTextQuestion, typeSetIndexQuestion, typeArrayJson } from "@/types/types";
+import {
+  typeIndexQuestion,
+  typeNameQuestion,
+  typeTextQuestion,
+  typeSetIndexQuestion,
+  typeArrayJson,
+} from "@/types/types";
 
 interface IQuestionsUnpack {
   title: typeNameQuestion;
@@ -13,6 +19,7 @@ interface IQuestionsJson {
   html: typeArrayJson;
   css: typeArrayJson;
   js: typeArrayJson;
+  ts: typeArrayJson;
   react: typeArrayJson;
   restApiHttp: typeArrayJson;
   cors: typeArrayJson;

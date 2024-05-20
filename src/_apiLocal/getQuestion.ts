@@ -1,7 +1,12 @@
 import { typeSetIndexQuestion, typeSetQuestion } from "@/types/types";
 import ServerCommands from "./serverComands.class";
 
-const getQuestion = async (idQuestionSelector: string, indexQuestion: number, setQuestion: typeSetQuestion, setIndex: typeSetIndexQuestion) => {
+const getQuestion = async (
+  idQuestionSelector: string,
+  indexQuestion: number,
+  setQuestion: typeSetQuestion,
+  setIndex: typeSetIndexQuestion
+) => {
   const questions = await ServerCommands.getQuestionsServer();
 
   let questionSelector = questions.html!;
@@ -15,6 +20,9 @@ const getQuestion = async (idQuestionSelector: string, indexQuestion: number, se
       break;
     case "js":
       questionSelector = questions.js!;
+      break;
+    case "ts":
+      questionSelector = questions.ts!;
       break;
     case "react":
       questionSelector = questions.react!;

@@ -4,7 +4,7 @@ import { IQuestionsJson } from "@/interfaces/IQuestions.interface";
 //https://mocki.io/fake-json-api
 
 class ServerCommands {
-  private URL = "https://mocki.io/v1/b1b04566-a598-4549-ac46-c811ca15e166";
+  private URL = "https://mocki.io/v1/36beaade-0460-412f-a1c4-995f78fa24ea";
 
   async getQuestionsServer() {
     return await axios.get<IQuestionsJson>(this.URL).then((res) => {
@@ -14,6 +14,7 @@ class ServerCommands {
         html: data.html,
         css: data.css,
         js: data.js,
+        ts: data.ts,
         react: data.react,
         restApiHttp: data.restApiHttp,
         cors: data.cors,
