@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useGetQuestions } from "../hooks/useGetQuestions";
+import { useGetQuestions } from "./useGetQuestions";
 import {
   typeElementsLength,
   typeSetIndexQuestion,

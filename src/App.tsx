@@ -3,7 +3,7 @@ import { IQuestionsUnpack } from "./interfaces/IQuestions.interface";
 import { typeElementsLength } from "./types/types";
 import TaskElement from "./components/TaskElement/TaskElement";
 import OptionsSelect from "./components/Header/OptionsSelect";
-import { useGetQuestion } from "./_apiLocal/useGetQuestion";
+import { useGetQuestion } from "./hooks/useGetQuestion";
 
 function App() {
   const [questionObject, setQuestionObject] = useState<IQuestionsUnpack>({
