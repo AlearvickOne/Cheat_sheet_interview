@@ -5,7 +5,7 @@ import {
   typeSetIndexQuestion,
   typeSetQuestion,
 } from "@/types/types";
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 
 export const useGetQuestion = async (
   idQuestionSelector: string,
@@ -44,26 +44,27 @@ export const useGetQuestion = async (
     }
   }, [idQuestionSelector, questions]);
 
-  useMemo(() => {
+  useEffect(() => {
     if (!questionSelector) return;
-
-    setElementsLength((prev) => ({
-      ...prev,
-      quantityElements: questionSelector.length,
-    }));
-
-    questionSelector!.map(({ title, text }, index) => {
-      const length = questionSelector!.length;
-
+    (async () => {
       setElementsLength((prev) => ({
         ...prev,
-        currentElement: indexQuestion + 1,
+        quantityElements: questionSelector.length,
       }));
 
-      if (indexQuestion === length) setIndex(0);
-      else if (indexQuestion === -1) setIndex(length - 1);
+      questionSelector!.map(({ title, text }, index) => {
+        const length = questionSelector!.length;
 
-      if (index === indexQuestion) setQuestion({ title: title, text: text });
-    });
+        setElementsLength((prev) => ({
+          ...prev,
+          currentElement: indexQuestion + 1,
+        }));
+
+        if (indexQuestion === length) setIndex(0);
+        else if (indexQuestion === -1) setIndex(length - 1);
+
+        if (index === indexQuestion) setQuestion({ title: title, text: text });
+      });
+    })();
   }, [indexQuestion, questionSelector, setIndex]);
 };
