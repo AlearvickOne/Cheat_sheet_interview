@@ -1,5 +1,5 @@
 import { IQuestionsUnpackElements } from "../../interfaces/IQuestions.interface";
-import Button from "../../widgest/Button.tsx/Button";
+import Button from "../../widgest/Button/Button";
 import "./taskElement.scss";
 import "../../animations/animation.scss";
 
