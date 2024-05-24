@@ -14,35 +14,35 @@ export const useGetQuestion = async (
   setIndex: typeSetIndexQuestion,
   setElementsLength: React.Dispatch<React.SetStateAction<typeElementsLength>>
 ) => {
-  const questions = useGetQuestions();
+  const { data } = useGetQuestions();
 
   const questionSelector = useMemo(() => {
-    if (!questions) return;
+    if (!data) return;
 
     switch (idQuestionSelector) {
       case "html":
         setIndex(0);
-        return questions.html;
+        return data.html;
       case "css":
         setIndex(0);
-        return questions.css;
+        return data.css;
       case "js":
         setIndex(0);
-        return questions.js;
+        return data.js;
       case "ts":
         setIndex(0);
-        return questions.ts;
+        return data.ts;
       case "react":
         setIndex(0);
-        return questions.react;
+        return data.react;
       case "restApiHttp":
         setIndex(0);
-        return questions.restApiHttp;
+        return data.restApiHttp;
       case "cors":
         setIndex(0);
-        return questions.cors;
+        return data.cors;
     }
-  }, [idQuestionSelector, questions]);
+  }, [idQuestionSelector, data]);
 
   useEffect(() => {
     if (!questionSelector) return;
