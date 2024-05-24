@@ -4,18 +4,23 @@ import {
   typeTextQuestion,
   typeSetIndexQuestion,
   typeArrayJson,
+  typeElementsLength,
 } from "@/types/types";
 
-interface IQuestionsUnpack {
+export interface IQuestionsUnpack {
   title: typeNameQuestion;
   text: typeTextQuestion;
   index?: typeIndexQuestion;
   setIndex?: typeSetIndexQuestion;
 }
 
+export interface IQuestionsUnpackElements extends IQuestionsUnpack {
+  elementsLength: typeElementsLength;
+}
+
 // ----------------------------------------------------------------
 
-interface IQuestionsJson {
+export interface IQuestionsJson {
   html: typeArrayJson;
   css: typeArrayJson;
   js: typeArrayJson;
@@ -24,5 +29,3 @@ interface IQuestionsJson {
   restApiHttp: typeArrayJson;
   cors: typeArrayJson;
 }
-
-export type { IQuestionsUnpack, IQuestionsJson };

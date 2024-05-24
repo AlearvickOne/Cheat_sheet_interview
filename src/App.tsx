@@ -1,22 +1,42 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { IQuestionsUnpack } from "./interfaces/IQuestions.interface";
+import { typeElementsLength } from "./types/types";
 import TaskElement from "./components/TaskElement/TaskElement";
 import OptionsSelect from "./components/Header/OptionsSelect";
-import getQuestion from "./_apiLocal/getQuestion";
+import { useGetQuestion } from "./_apiLocal/useGetQuestion";
 
 function App() {
-  const [questionObject, setQuestionObject] = useState<IQuestionsUnpack>({ title: "", text: "" });
+  const [questionObject, setQuestionObject] = useState<IQuestionsUnpack>({
+    title: "",
+    text: "",
+  });
   const [indexQuestion, setIndexQuestion] = useState<number>(0);
   const [selectName, setSelectName] = useState<string>("html");
+  const [elementsLength, setElementsLength] = useState<typeElementsLength>({
+    quantityElements: 0,
+    currentElement: 0,
+  });
 
-  useMemo(() => getQuestion(selectName, indexQuestion, setQuestionObject, setIndexQuestion), [selectName, indexQuestion]);
+  useGetQuestion(
+    selectName,
+    indexQuestion,
+    setQuestionObject,
+    setIndexQuestion,
+    setElementsLength
+  );
 
   const { title, text } = questionObject;
 
   return (
     <>
       <OptionsSelect selectName={selectName} setSelectName={setSelectName} />
-      <TaskElement title={title} text={text} index={indexQuestion!} setIndex={setIndexQuestion} />
+      <TaskElement
+        title={title}
+        text={text}
+        index={indexQuestion!}
+        setIndex={setIndexQuestion}
+        elementsLength={elementsLength}
+      />
     </>
   );
 }

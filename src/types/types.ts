@@ -2,35 +2,31 @@ import { IQuestionsUnpack } from "@/interfaces/IQuestions.interface";
 import { SetStateAction } from "react";
 
 /* React.Dispatch */
-type typeSetSelectName = React.Dispatch<React.SetStateAction<string>>;
-type typeSetQuestion = React.Dispatch<React.SetStateAction<IQuestionsUnpack>>;
-type typeSetIndexQuestion = React.Dispatch<React.SetStateAction<number>>;
+export type typeSetSelectName = React.Dispatch<React.SetStateAction<string>>;
+export type typeSetQuestion = React.Dispatch<
+  React.SetStateAction<IQuestionsUnpack>
+>;
+export type typeSetIndexQuestion = React.Dispatch<React.SetStateAction<number>>;
 
 /* IQuestions */
 
-type typeNameQuestion = string;
-type typeTextQuestion = string;
-type typeIndexQuestion = number;
+export type typeNameQuestion = string;
+export type typeTextQuestion = string;
+export type typeIndexQuestion = number;
 
-type typeArrayJson = [
+export type typeArrayJson = [
   {
     title: string;
     text: string;
   }
 ];
 
+export type typeElementsLength = {
+  quantityElements: number;
+  currentElement: number;
+};
+
 /* Event */
-type typeTargetEventString = { target: { value: SetStateAction<string> } };
-
-/* EXPORT */
-
-export type {
-  typeSetSelectName,
-  typeSetQuestion,
-  typeSetIndexQuestion,
-  typeNameQuestion,
-  typeTextQuestion,
-  typeIndexQuestion,
-  typeArrayJson,
-  typeTargetEventString,
+export type typeTargetEventString = {
+  target: { value: SetStateAction<string> };
 };
