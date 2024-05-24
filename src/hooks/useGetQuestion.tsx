@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useGetQuestions } from "./useGetQuestions";
+import { IQuestionsJson } from "@/interfaces/IQuestions.interface";
+
 import {
   typeElementsLength,
   typeSetIndexQuestion,
@@ -12,10 +13,9 @@ export const useGetQuestion = async (
   indexQuestion: number,
   setQuestion: typeSetQuestion,
   setIndex: typeSetIndexQuestion,
-  setElementsLength: React.Dispatch<React.SetStateAction<typeElementsLength>>
+  setElementsLength: React.Dispatch<React.SetStateAction<typeElementsLength>>,
+  data: IQuestionsJson | undefined
 ) => {
-  const { data } = useGetQuestions();
-
   const questionSelector = useMemo(() => {
     if (!data) return;
 
